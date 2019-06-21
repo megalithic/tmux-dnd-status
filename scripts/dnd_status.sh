@@ -37,7 +37,7 @@ dnd_off_icon_default() {
 }
 
 dnd_status() {
-  if is_dnd_installed; then
+  if is_osx && is_dnd_installed; then
     status=$(do-not-disturb status)
     $([ "$status" == "on" ] && true || false)
   fi
@@ -49,8 +49,6 @@ print_icon() {
   else
     printf "$(get_tmux_option "$dnd_off_option_string" "$(dnd_off_icon_default)")"
   fi
-
-  $(dnd_status)
 }
 
 main() {
