@@ -4,7 +4,7 @@ Tmux plugin that enables displaying the DND (do-not-disturb) status of your mac
 
 Introduces a new `#{dnd_status}` format to display whether DND mode is on or off.
 
-Tested and working on macOs only.
+Tested and working on macOS only.
 
 ### Usage
 
@@ -16,6 +16,12 @@ Here's the example in `.tmux.conf`:
 ```tmux
 set -g status-right "#{dnd_status} | %a %h-%d %H:%M "
 ```
+
+**macOS**<br/>
+On macOS the above will look like this when DND is on<br/>
+![DND on indicator](/screenshots/dnd_on_indicator.png)<br/>
+or this when DND is off<br/>
+![DND off indicator](/screenshots/dnd_off_indicator.png)<br/>
 
 #### Configure icons
 
