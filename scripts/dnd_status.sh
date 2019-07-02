@@ -16,10 +16,6 @@ is_osx() {
   [ $(uname) == "Darwin" ]
 }
 
-is_dnd_installed() {
-  [ -x "$(command -v do-not-disturb)" ]
-}
-
 dnd_on_icon_default() {
   if is_osx; then
     echo "$dnd_on_icon_osx"
@@ -37,9 +33,9 @@ dnd_off_icon_default() {
 }
 
 dnd_status() {
-  if is_osx && is_dnd_installed; then
-    status=$(do-not-disturb status)
-    $([ "$status" == "on" ] && true || false)
+  if is_osx; then
+    status=$(defaults -currentHost read ~/Library/Preferences/ByHost/com.apple.notificationcenterui doNotDisturb)
+    $([[ "$status" -eq 1 ]] && true || false)
   fi
 }
 

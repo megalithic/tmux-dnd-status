@@ -2,7 +2,7 @@
 
 Tmux plugin that enables displaying the DND (do-not-disturb) status of your mac
 
-Introduces a new `#{dnd_status}` format. It requires the `node` module, `do-not-disturb-cli`, to be installed globally.
+Introduces a new `#{dnd_status}` format to display whether DND mode is on or off.
 
 Tested and working on macOs only.
 
