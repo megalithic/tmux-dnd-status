@@ -1,10 +1,12 @@
 # Tmux DND Status
 
-Tmux plugin that enables displaying the DND (do-not-disturb) status of your mac
+Tmux plugin that enables displaying the DND (do-not-disturb) status of your mac.
 
 Introduces a new `#{dnd_status}` format to display whether DND mode is on or off.
 
-Tested and working on macOS only.
+Tested and working on MacOS (Big Sur) only.
+
+Presently requires: `brew install "vitorgalvao/tiny-scripts/calm-notifications"`
 
 ### Usage
 
@@ -75,6 +77,8 @@ Set `status-interval` to a low number to make this faster, example (in `.tmux.co
 ```tmux
 set -g status-interval 5
 ```
+
+Also, MacOS Big Sur introduced some breaking changes to make it more challenging to set and get DND status; so we now use a [nice ruby script](https://github.com/vitorgalvao/tiny-scripts/blob/master/calm-notifications) instead.
 
 ### License
 
