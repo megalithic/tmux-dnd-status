@@ -34,10 +34,8 @@ dnd_off_icon_default() {
 
 dnd_status() {
   if is_osx; then
-    # status=$(defaults -currentHost read ~/Library/Preferences/ByHost/com.apple.notificationcenterui doNotDisturb)
     status=$(calm-notifications status)
-
-    $([[ "$status" -eq "on" ]] && true || false)
+    $([[ "$status" == "on" ]] && true || false)
   fi
 }
 
