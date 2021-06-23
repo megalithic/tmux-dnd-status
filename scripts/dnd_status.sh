@@ -50,8 +50,6 @@ print_icon() {
 }
 
 main() {
-  if (command -v calm-notifications &> /dev/null); then
-    print_icon
-  fi
+  print_icon
 }
 main
